@@ -18,6 +18,7 @@
 		906D0DE81EBE5367004C730F /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 906D0DE61EBE5367004C730F /* TodayViewController.xib */; };
 		906D0DEC1EBE5367004C730F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 906D0DEA1EBE5367004C730F /* InfoPlist.strings */; };
 		906D0DEF1EBE5367004C730F /* TodayPosterExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 906D0DDC1EBE5367004C730F /* TodayPosterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		909C15331EBE60F4001B426E /* LUBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 909C15321EBE60F4001B426E /* LUBAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		906D0DE71EBE5367004C730F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
 		906D0DE91EBE5367004C730F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		906D0DEB1EBE5367004C730F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		909C15311EBE60F4001B426E /* LUBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBAPI.h; sourceTree = "<group>"; };
+		909C15321EBE60F4001B426E /* LUBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 		906D0DE01EBE5367004C730F /* TodayPosterExtension */ = {
 			isa = PBXGroup;
 			children = (
+				909C15311EBE60F4001B426E /* LUBAPI.h */,
+				909C15321EBE60F4001B426E /* LUBAPI.m */,
 				906D0DE31EBE5367004C730F /* TodayViewController.h */,
 				906D0DE41EBE5367004C730F /* TodayViewController.m */,
 				906D0DE61EBE5367004C730F /* TodayViewController.xib */,
@@ -337,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				909C15331EBE60F4001B426E /* LUBAPI.m in Sources */,
 				906D0DE51EBE5367004C730F /* TodayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +580,7 @@
 				906D0DD41EBE518C004C730F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		906D0DD51EBE518C004C730F /* Build configuration list for PBXNativeTarget "TodayPosterTests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +589,7 @@
 				906D0DD71EBE518C004C730F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		906D0DF01EBE5367004C730F /* Build configuration list for PBXNativeTarget "TodayPosterExtension" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +598,7 @@
 				906D0DF21EBE5367004C730F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
