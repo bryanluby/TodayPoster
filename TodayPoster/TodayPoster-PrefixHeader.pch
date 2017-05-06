@@ -1,0 +1,21 @@
+//
+//  TodayPoster-PrefixHeader.pch
+//  TodayPoster
+//
+//  Created by Bryan Luby on 5/6/17.
+//  Copyright © 2017 Bryan Luby. All rights reserved.
+//
+
+#ifndef TodayPoster_PrefixHeader_pch
+#define TodayPoster_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* TodayPoster_PrefixHeader_pch */
+
+#ifdef DEBUG
+#    define DLog(...) NSLog(@"%s:%d %@", __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:@""__VA_ARGS__])
+#else
+#    define DLog(...) do {} while (NO)
+#endif

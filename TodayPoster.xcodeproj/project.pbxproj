@@ -75,6 +75,7 @@
 		906D0DEB1EBE5367004C730F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		909C15311EBE60F4001B426E /* LUBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBAPI.h; sourceTree = "<group>"; };
 		909C15321EBE60F4001B426E /* LUBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBAPI.m; sourceTree = "<group>"; };
+		909C15361EBE6A07001B426E /* TodayPoster-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodayPoster-PrefixHeader.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				906D0DBA1EBE518C004C730F /* main.m */,
+				909C15361EBE6A07001B426E /* TodayPoster-PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -485,6 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S9HQX59LFF;
+				GCC_PREFIX_HEADER = "TodayPoster/TodayPoster-PrefixHeader.pch";
 				INFOPLIST_FILE = TodayPoster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster;
@@ -498,6 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S9HQX59LFF;
+				GCC_PREFIX_HEADER = "TodayPoster/TodayPoster-PrefixHeader.pch";
 				INFOPLIST_FILE = TodayPoster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster;
@@ -539,6 +543,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayPosterExtension/TodayPosterExtension.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S9HQX59LFF;
+				GCC_PREFIX_HEADER = "TodayPoster/TodayPoster-PrefixHeader.pch";
 				INFOPLIST_FILE = TodayPosterExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster.TodayPosterExtension;
@@ -553,6 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayPosterExtension/TodayPosterExtension.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S9HQX59LFF;
+				GCC_PREFIX_HEADER = "TodayPoster/TodayPoster-PrefixHeader.pch";
 				INFOPLIST_FILE = TodayPosterExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster.TodayPosterExtension;
