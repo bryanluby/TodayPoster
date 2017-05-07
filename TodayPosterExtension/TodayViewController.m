@@ -6,12 +6,16 @@
 //  Copyright © 2017 Bryan Luby. All rights reserved.
 //
 
+@import NotificationCenter.NCWidgetProviding;
+
 #import "TodayViewController.h"
-#import <NotificationCenter/NotificationCenter.h>
 
 #import "LUBAPI.h"
+#import "LUBEditTokenViewController.h"
 
 @interface TodayViewController () <NCWidgetProviding>
+
+@property (nonatomic, strong) IBOutlet NSTextView *textView;
 
 @end
 
@@ -19,18 +23,42 @@
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult result))completionHandler
 {
-    // Update your data and prepare for a snapshot. Call completion handler when you are done
-    // with NoData if nothing has changed or NewData if there is new data since the last
-    // time we called you
     completionHandler(NCUpdateResultNoData);
 }
 
 - (IBAction)postButtonPressed:(NSButton *)sender
 {
-    [LUBAPI postToMicroDotBlogWithText:@"Testing out posting API"
-                              appToken:@""
+    NSString *appToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppTokenKey"];
+    
+    if (!appToken) {
+        [self showEditTokenViewController];
+        return;
+    }
+    
+    if (self.textView.string.length == 0) {
+        // Enable/disable button instead
+        return;
+    }
+    
+    typeof(self) __weak weakSelf = self;
+    [LUBAPI postToMicroDotBlogWithText:self.textView.string
+                              appToken:appToken
                             completion:^(BOOL success) {
+                                if (success) {
+                                    weakSelf.textView.string = @"";
+                                    // TODO: display label with location of post url
+                                } else {
+                                    // TODO: Display error message
+                                }
                             }];
+}
+
+- (void)showEditTokenViewController
+{
+    LUBEditTokenViewController *vc = [[LUBEditTokenViewController alloc] initWithNibName:NSStringFromClass(LUBEditTokenViewController.class)
+                                                                                  bundle:nil];
+    
+    [self presentViewControllerInWidget:vc];
 }
 
 @end
