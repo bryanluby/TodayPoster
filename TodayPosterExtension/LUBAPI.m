@@ -12,7 +12,7 @@
 
 + (void)postToMicroDotBlogWithText:(NSString *)postText appToken:(NSString *)appToken completion:(void (^)(BOOL))completion
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://micro.blog/micropub"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://micro.blog/micropub"]];
     request.HTTPMethod = @"POST";
     
     [request addValue:[NSString stringWithFormat:@"Bearer %@", appToken]
@@ -28,6 +28,9 @@
     [[NSURLSession.sharedSession dataTaskWithRequest:request
                                    completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                        DLog(@"%@", response);
+                                       if (error) {
+                                           DLog(@"%@", error);
+                                       }
                                        
                                        NSInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
                                        BOOL requestWasSuccessful = (statusCode == 201 || statusCode == 202);
