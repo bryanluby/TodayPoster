@@ -21,6 +21,7 @@
 		909C15331EBE60F4001B426E /* LUBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 909C15321EBE60F4001B426E /* LUBAPI.m */; };
 		909C15461EBFA108001B426E /* LUBEditTokenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 909C15441EBFA108001B426E /* LUBEditTokenViewController.m */; };
 		909C15471EBFA108001B426E /* LUBEditTokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909C15451EBFA108001B426E /* LUBEditTokenViewController.xib */; };
+		90B5101C1EC0A42B00D43C95 /* LUBCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B5101B1EC0A42B00D43C95 /* LUBCredentials.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		909C15431EBFA108001B426E /* LUBEditTokenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBEditTokenViewController.h; sourceTree = "<group>"; };
 		909C15441EBFA108001B426E /* LUBEditTokenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBEditTokenViewController.m; sourceTree = "<group>"; };
 		909C15451EBFA108001B426E /* LUBEditTokenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUBEditTokenViewController.xib; sourceTree = "<group>"; };
+		90B5101A1EC0A42B00D43C95 /* LUBCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBCredentials.h; sourceTree = "<group>"; };
+		90B5101B1EC0A42B00D43C95 /* LUBCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBCredentials.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 			children = (
 				909C15311EBE60F4001B426E /* LUBAPI.h */,
 				909C15321EBE60F4001B426E /* LUBAPI.m */,
+				90B5101A1EC0A42B00D43C95 /* LUBCredentials.h */,
+				90B5101B1EC0A42B00D43C95 /* LUBCredentials.m */,
 				906D0DE31EBE5367004C730F /* TodayViewController.h */,
 				906D0DE41EBE5367004C730F /* TodayViewController.m */,
 				906D0DE61EBE5367004C730F /* TodayViewController.xib */,
@@ -353,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B5101C1EC0A42B00D43C95 /* LUBCredentials.m in Sources */,
 				909C15461EBFA108001B426E /* LUBEditTokenViewController.m in Sources */,
 				909C15331EBE60F4001B426E /* LUBAPI.m in Sources */,
 				906D0DE51EBE5367004C730F /* TodayViewController.m in Sources */,
