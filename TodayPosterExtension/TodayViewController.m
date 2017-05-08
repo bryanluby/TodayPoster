@@ -12,6 +12,7 @@
 
 #import "LUBAPI.h"
 #import "LUBEditTokenViewController.h"
+#import "LUBCredentials.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 
@@ -28,8 +29,8 @@
 
 - (IBAction)postButtonPressed:(NSButton *)sender
 {
-    NSString *appToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppTokenKey"];
-    
+    NSString *const appToken = LUBCredentials.appToken;
+
     if (!appToken) {
         [self showEditTokenViewController];
         return;
@@ -39,11 +40,13 @@
         // Enable/disable button instead
         return;
     }
-    
+
+    // TODO: Start progress spinner
     typeof(self) __weak weakSelf = self;
     [LUBAPI postToMicroDotBlogWithText:self.textView.string
                               appToken:appToken
                             completion:^(BOOL success) {
+                                // TODO: Stop progress spinner
                                 if (success) {
                                     weakSelf.textView.string = @"";
                                     // TODO: display label with location of post url
@@ -55,10 +58,10 @@
 
 - (void)showEditTokenViewController
 {
-    LUBEditTokenViewController *vc = [[LUBEditTokenViewController alloc] initWithNibName:NSStringFromClass(LUBEditTokenViewController.class)
-                                                                                  bundle:nil];
+    LUBEditTokenViewController *editTokenViewController = [[LUBEditTokenViewController alloc] initWithNibName:NSStringFromClass(LUBEditTokenViewController.class)
+                                                                                                       bundle:nil];
     
-    [self presentViewControllerInWidget:vc];
+    [self presentViewControllerInWidget:editTokenViewController];
 }
 
 @end

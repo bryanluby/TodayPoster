@@ -9,6 +9,7 @@
 @import NotificationCenter;
 
 #import "LUBEditTokenViewController.h"
+#import "LUBCredentials.h"
 
 @interface LUBEditTokenViewController ()
 
@@ -24,10 +25,9 @@
         // Enable/disable button instead
         return;
     }
-    
-    [[NSUserDefaults standardUserDefaults] setObject:self.secureTextField.stringValue forKey:@"AppTokenKey"];
-    
-    // TODO: Save textfield to keychain
+
+    LUBCredentials.appToken = self.secureTextField.stringValue;
+
     [self.presentingViewController dismissViewController:self];
 }
 
