@@ -1,6 +1,6 @@
 # TodayPoster
 
-Simple macOS Today Extension for posting to Micro.blog.
+Simple macOS Today Widget for posting to [Micro.blog](https://micro.blog/).
 
 ![TodayPoster](https://github.com/bryanluby/TodayPoster/blob/master/TodayPoster.png "App Screenshot")
 
@@ -12,7 +12,7 @@ Simple macOS Today Extension for posting to Micro.blog.
 
 ## Installation
 
-1. Download the latest TodayPoster.app.zip file from the [releases page](https://github.com/bryanluby/TodayPoster/releases).
+1. Download the latest TodayPoster.zip file from the [releases page](https://github.com/bryanluby/TodayPoster/releases).
 2. Unzip the file and drag the TodayPoster.app file to your Applications folder.
 3. Open the TodayPoster.app file. You can then quit the app.
 4. Open the Notification Center sidebar.
