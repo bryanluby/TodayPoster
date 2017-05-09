@@ -34,7 +34,10 @@
                                        
                                        NSInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
                                        BOOL requestWasSuccessful = (statusCode == 201 || statusCode == 202);
-                                       completion(requestWasSuccessful);
+                                       
+                                       [NSOperationQueue.mainQueue addOperationWithBlock:^{
+                                           completion(requestWasSuccessful);
+                                       }];
                                    }] resume];
 }
 
