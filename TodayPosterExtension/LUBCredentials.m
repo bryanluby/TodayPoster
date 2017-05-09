@@ -12,9 +12,9 @@
 
 + (NSURLProtectionSpace *)protectionSpace
 {
-    return [[NSURLProtectionSpace alloc] initWithHost:@"www.micro.blog"
+    return [[NSURLProtectionSpace alloc] initWithHost:@"com.bryanluby.TodayPoster"
                                                  port:0
-                                             protocol:@"https"
+                                             protocol:nil
                                                 realm:nil
                                  authenticationMethod:nil];
 }
@@ -27,7 +27,7 @@
 
 + (void)setAppToken:(NSString *)appToken
 {
-    NSURLCredential *credential = [NSURLCredential credentialWithUser:@"TodayPosterUser"
+    NSURLCredential *credential = [NSURLCredential credentialWithUser:@"TodayPosterAppToken"
                                                              password:appToken
                                                           persistence:NSURLCredentialPersistencePermanent];
     [NSURLCredentialStorage.sharedCredentialStorage setDefaultCredential:credential forProtectionSpace:self.protectionSpace];
