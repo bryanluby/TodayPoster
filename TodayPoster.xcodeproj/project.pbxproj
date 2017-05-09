@@ -212,6 +212,7 @@
 				906D0DAF1EBE518C004C730F /* Sources */,
 				906D0DB01EBE518C004C730F /* Frameworks */,
 				906D0DB11EBE518C004C730F /* Resources */,
+				90FFA29E1EC1483F00646CE8 /* Build Number Incrementing Run Script */,
 				906D0DF31EBE5367004C730F /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -249,6 +250,7 @@
 				906D0DD81EBE5367004C730F /* Sources */,
 				906D0DD91EBE5367004C730F /* Frameworks */,
 				906D0DDA1EBE5367004C730F /* Resources */,
+				90FFA29D1EC1480200646CE8 /* Build Number Incrementing Run Script */,
 			);
 			buildRules = (
 			);
@@ -334,6 +336,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		90FFA29D1EC1480200646CE8 /* Build Number Incrementing Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Number Incrementing Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\"${SRCROOT}/TodayPoster/Scripts/Build_Number_Incrementing_Run_Script.sh\"";
+		};
+		90FFA29E1EC1483F00646CE8 /* Build Number Incrementing Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Number Incrementing Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\"${SRCROOT}/TodayPoster/Scripts/Build_Number_Incrementing_Run_Script.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		906D0DAF1EBE518C004C730F /* Sources */ = {
