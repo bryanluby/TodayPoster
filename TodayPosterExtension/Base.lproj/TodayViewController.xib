@@ -53,7 +53,7 @@
                         </scrollView>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zyF-Zt-PqY">
                             <rect key="frame" x="83.5" y="-7" width="153" height="32"/>
-                            <buttonCell key="cell" type="push" title="Post To Micro.blog" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mTI-yk-YXe">
+                            <buttonCell key="cell" type="push" title="Post To Micro.blog" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Pop" inset="2" id="mTI-yk-YXe">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                                 <string key="keyEquivalent" base64-UTF8="YES">
@@ -85,4 +85,7 @@ DQ
             <point key="canvasLocation" x="137" y="-146"/>
         </customView>
     </objects>
+    <resources>
+        <sound name="Pop"/>
+    </resources>
 </document>
