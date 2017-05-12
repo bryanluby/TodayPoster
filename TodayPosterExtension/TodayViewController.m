@@ -14,6 +14,10 @@
 #import "LUBEditTokenViewController.h"
 #import "LUBCredentials.h"
 
+#define ReverseDNS @"com.bryanluby.TodayPoster"
+static NSString *const PostDraftDefaultsKey = ReverseDNS @"PostDraftDefaultsKey";
+static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursorLocationKey";
+
 @interface TodayViewController () <NCWidgetProviding>
 
 @property (nonatomic, strong) IBOutlet NSTextView *textView;
@@ -25,6 +29,18 @@
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult result))completionHandler
 {
     completionHandler(NCUpdateResultNoData);
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self restorePost];
+}
+
+- (void)dealloc
+{
+    [self savePost];
 }
 
 - (IBAction)postButtonPressed:(NSButton *)sender
@@ -62,6 +78,33 @@
                                                                                                        bundle:nil];
     
     [self presentViewControllerInWidget:editTokenViewController];
+}
+
+#pragma mark - Post Saving/Restoring
+
+- (void)savePost
+{
+    if (self.textView.string) {
+        [NSUserDefaults.standardUserDefaults setObject:self.textView.string forKey:PostDraftDefaultsKey];
+    }
+    
+    NSUInteger cursorPosition = self.textView.selectedRanges.firstObject.rangeValue.location;
+    if (cursorPosition != NSNotFound) {
+        [NSUserDefaults.standardUserDefaults setObject:@(cursorPosition) forKey:PostDraftCursorLocationKey];
+    }
+}
+
+- (void)restorePost
+{
+    NSString *savedPostDraft = [NSUserDefaults.standardUserDefaults objectForKey:PostDraftDefaultsKey];
+    if (savedPostDraft) {
+        self.textView.string = savedPostDraft;
+    }
+    
+    NSNumber *savedCursorLocation = [NSUserDefaults.standardUserDefaults objectForKey:PostDraftCursorLocationKey];
+    if (savedCursorLocation && savedCursorLocation.integerValue != NSNotFound) {
+        self.textView.selectedRange = NSMakeRange(savedCursorLocation.integerValue, 0);
+    }
 }
 
 @end
