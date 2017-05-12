@@ -23,16 +23,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                     <subviews>
                         <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9Q-AHn">
-                            <rect key="frame" x="40" y="50" width="240" height="135"/>
+                            <rect key="frame" x="15" y="50" width="290" height="135"/>
                             <clipView key="contentView" id="7om-4p-2pr">
-                                <rect key="frame" x="1" y="1" width="238" height="133"/>
+                                <rect key="frame" x="1" y="1" width="288" height="133"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="lgZ-p2-m8B">
-                                        <rect key="frame" x="0.0" y="0.0" width="238" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="133"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="minSize" width="238" height="133"/>
+                                        <size key="minSize" width="288" height="133"/>
                                         <size key="maxSize" width="463" height="10000000"/>
                                         <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     </textView>
@@ -41,21 +41,21 @@
                             </clipView>
                             <constraints>
                                 <constraint firstAttribute="height" constant="135" id="Ano-y1-xC7"/>
-                                <constraint firstAttribute="width" constant="240" id="HoY-wt-PRF"/>
+                                <constraint firstAttribute="width" constant="290" id="HoY-wt-PRF"/>
                             </constraints>
                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="7ec-95-Eeb">
                                 <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                             <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="YhI-7g-2cg">
-                                <rect key="frame" x="223" y="1" width="16" height="133"/>
+                                <rect key="frame" x="273" y="1" width="16" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                         </scrollView>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rjz-Cg-aVY">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                             <subviews>
-                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zyF-Zt-PqY">
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zyF-Zt-PqY" userLabel="Post To Micro.blog Button">
                                     <rect key="frame" x="84" y="7" width="153" height="32"/>
                                     <buttonCell key="cell" type="push" title="Post To Micro.blog" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Pop" inset="2" id="mTI-yk-YXe">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -69,19 +69,33 @@ DQ
                                         <action selector="postButtonPressed:" target="-2" id="5D8-m6-WGR"/>
                                     </connections>
                                 </button>
-                                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="YtY-dR-ea0">
-                                    <rect key="frame" x="252" y="17" width="16" height="16"/>
+                                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="YtY-dR-ea0">
+                                    <rect key="frame" x="288" y="17" width="16" height="16"/>
                                 </progressIndicator>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-Ln-iug" userLabel="Settings Button">
+                                    <rect key="frame" x="11" y="10" width="36" height="28"/>
+                                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSActionTemplate" imagePosition="only" alignment="center" controlSize="small" borderStyle="border" inset="2" id="yR3-iA-fzS">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="settingsButtonPressed:" target="-2" id="62F-67-QSG"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="SC8-E2-BUw"/>
+                                <constraint firstItem="ngV-Ln-iug" firstAttribute="centerY" secondItem="zyF-Zt-PqY" secondAttribute="centerY" id="dtC-0b-Eq7"/>
                                 <constraint firstItem="zyF-Zt-PqY" firstAttribute="centerX" secondItem="Rjz-Cg-aVY" secondAttribute="centerX" id="gxe-xI-Rwd"/>
                                 <constraint firstItem="zyF-Zt-PqY" firstAttribute="centerY" secondItem="Rjz-Cg-aVY" secondAttribute="centerY" id="l4j-mK-6E7"/>
                                 <constraint firstItem="YtY-dR-ea0" firstAttribute="centerY" secondItem="zyF-Zt-PqY" secondAttribute="centerY" id="pYi-TC-1YF"/>
-                                <constraint firstItem="YtY-dR-ea0" firstAttribute="leading" secondItem="zyF-Zt-PqY" secondAttribute="trailing" constant="21" id="vNQ-qz-byR"/>
                             </constraints>
                         </customView>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="YtY-dR-ea0" firstAttribute="trailing" secondItem="lgZ-p2-m8B" secondAttribute="trailing" id="6A0-Ce-dp1"/>
+                        <constraint firstItem="ngV-Ln-iug" firstAttribute="leading" secondItem="lgZ-p2-m8B" secondAttribute="leading" id="TtH-Rw-wN7"/>
+                    </constraints>
                     <visibilityPriorities>
                         <integer value="1000"/>
                         <integer value="1000"/>
@@ -103,6 +117,7 @@ DQ
         </customView>
     </objects>
     <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
         <sound name="Pop"/>
     </resources>
 </document>

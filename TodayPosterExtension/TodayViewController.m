@@ -27,11 +27,6 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 
 @implementation TodayViewController
 
-- (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult result))completionHandler
-{
-    completionHandler(NCUpdateResultNoData);
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,6 +37,20 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 - (void)dealloc
 {
     [self savePost];
+}
+
+#pragma mark - NCWidgetProviding
+
+- (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult result))completionHandler
+{
+    completionHandler(NCUpdateResultNoData);
+}
+
+#pragma mark - IBActions
+
+- (IBAction)settingsButtonPressed:(NSButton *)sender
+{
+    [self showEditTokenViewController];
 }
 
 - (IBAction)postButtonPressed:(NSButton *)sender
