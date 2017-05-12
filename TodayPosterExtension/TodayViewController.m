@@ -21,6 +21,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 @interface TodayViewController () <NCWidgetProviding>
 
 @property (nonatomic, strong) IBOutlet NSTextView *textView;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *progressSpinner;
 
 @end
 
@@ -57,12 +58,13 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
         return;
     }
 
-    // TODO: Start progress spinner
+    [self.progressSpinner startAnimation:nil];
     typeof(self) __weak weakSelf = self;
     [LUBAPI postToMicroDotBlogWithText:self.textView.string
                               appToken:appToken
                             completion:^(BOOL success) {
-                                // TODO: Stop progress spinner
+                                [weakSelf.progressSpinner stopAnimation:nil];
+                                
                                 if (success) {
                                     weakSelf.textView.string = @"";
                                     // TODO: display label with location of post url
