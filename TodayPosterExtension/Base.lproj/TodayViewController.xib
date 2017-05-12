@@ -56,6 +56,10 @@
                             <buttonCell key="cell" type="push" title="Post To Micro.blog" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mTI-yk-YXe">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </buttonCell>
                             <connections>
                                 <action selector="postButtonPressed:" target="-2" id="5D8-m6-WGR"/>
