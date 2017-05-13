@@ -12,7 +12,7 @@ Simple macOS Today Widget for posting to [Micro.blog](https://micro.blog/).
 
 ## Installation
 
-1. Download the latest TodayPoster.zip file from the [releases page](https://github.com/bryanluby/TodayPoster/releases).
+1. Download the latest TodayPoster.zip file from the [releases page](https://github.com/bryanluby/TodayPoster/releases/latest).
 2. Unzip the file and drag the TodayPoster.app file to your Applications folder.
 3. Open the TodayPoster.app file. You can then quit the app.
 4. Open the Notification Center sidebar.
@@ -21,5 +21,7 @@ Simple macOS Today Widget for posting to [Micro.blog](https://micro.blog/).
 
 ## Usage
 
-1. Simply write some text and press the "Post To Micro.blog" button.
-2. The first time you try to post the app will bring up a dialog to save an app token (this will be securely stored in your keychain) that is required for posting to Micro.blog. This app-specific token must be generated at Micro.blog > Account > Edit Apps.
+1. Simply write some text and press the "Post To Micro.blog" button (There is also a Command + Enter keyboard shortcut to publish the post).
+2. The first time you try to post, the app will bring up a dialog to save an app token (this will be securely stored in your keychain) that is required for posting to Micro.blog. This app-specific token must be generated at Micro.blog > Account > Edit Apps.
+3. Press the settings button if you need to edit the app token later.
+4. There is also a setting to post to a custom Micropub URL on the settings page.
