@@ -10,7 +10,7 @@
 
 @implementation LUBAPI
 
-+ (void)postToMicroDotBlogWithText:(NSString *)postText appToken:(NSString *)appToken completion:(void (^)(BOOL))completion
++ (void)postToMicroDotBlogWithText:(NSString *)postText appToken:(NSString *)appToken completion:(void (^)(BOOL success, NSString * _Nullable postURL))completion
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://micro.blog/micropub"]];
     request.HTTPMethod = @"POST";
@@ -32,11 +32,14 @@
                                            DLog(@"%@", error);
                                        }
                                        
-                                       NSInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
+                                       NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)response;
+                                       
+                                       NSInteger statusCode = urlResponse.statusCode;
                                        BOOL requestWasSuccessful = (statusCode == 201 || statusCode == 202);
                                        
                                        [NSOperationQueue.mainQueue addOperationWithBlock:^{
-                                           completion(requestWasSuccessful);
+                                           NSString *postURL = urlResponse.allHeaderFields[@"Location"];
+                                           completion(requestWasSuccessful, postURL);
                                        }];
                                    }] resume];
 }

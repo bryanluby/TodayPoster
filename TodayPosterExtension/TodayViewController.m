@@ -58,6 +58,8 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     self.characterCounterLabel.stringValue = [NSString stringWithFormat:@"%@/280", @(self.textView.string.length)];
 }
 
+#pragma mark - Messaging
+
 - (void)configureMessageLabel
 {
     self.messageLabel = [[NSTextField alloc] initWithFrame:NSZeroRect];
@@ -67,6 +69,24 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     self.messageLabel.drawsBackground = NO;
     self.messageLabel.bezeled = NO;
 }
+
+- (void)showSuccessfulPostMessageWithURL:(NSString *)urlString
+{
+    [self.stackView addArrangedSubview:self.messageLabel];
+    
+    if (urlString) {
+        NSFont *labelFont = self.messageLabel.font;
+        NSString *html = [NSString stringWithFormat:@"Success! Link: <a href=\"%@\">%@</a>", urlString, urlString];
+        html = [NSString stringWithFormat:@"<span style=\"font-family:'%@'; font-size:%dpx;\">%@</span>",
+                labelFont.fontName, (int)labelFont.pointSize, html];
+        NSData *htmlData = [html dataUsingEncoding:NSUTF8StringEncoding];
+        
+        self.messageLabel.attributedStringValue = [[NSAttributedString alloc] initWithHTML:htmlData documentAttributes:nil];
+    } else {
+        self.messageLabel.stringValue = NSLocalizedString(@"Success!", @"Confirmation message for a successful post");
+    }
+}
+
 - (void)showPostErrorMessage
 {
     [self.stackView addArrangedSubview:self.messageLabel];
@@ -116,14 +136,16 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     typeof(self) __weak weakSelf = self;
     [LUBAPI postToMicroDotBlogWithText:self.textView.string
                               appToken:appToken
-                            completion:^(BOOL success) {
+                            completion:^(BOOL success, NSString *postURL) {
                                 [weakSelf.progressSpinner stopAnimation:nil];
                                 
                                 if (success) {
                                     weakSelf.textView.string = @"";
-                                    // TODO: display label with location of post url
+                                    if (postURL) {
+                                        [weakSelf showSuccessfulPostMessageWithURL:postURL];
+                                    }
                                 } else {
-                                    [self showPostErrorMessage];
+                                    [weakSelf showPostErrorMessage];
                                 }
                             }];
 }
