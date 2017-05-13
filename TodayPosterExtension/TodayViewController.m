@@ -18,10 +18,11 @@
 static NSString *const PostDraftDefaultsKey = ReverseDNS @"PostDraftDefaultsKey";
 static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursorLocationKey";
 
-@interface TodayViewController () <NCWidgetProviding>
+@interface TodayViewController () <NCWidgetProviding, NSTextViewDelegate>
 
 @property (nonatomic, strong) IBOutlet NSTextView *textView;
 @property (nonatomic, strong) IBOutlet NSProgressIndicator *progressSpinner;
+@property (nonatomic, strong) IBOutlet NSTextField *characterCounterLabel;
 
 @end
 
@@ -32,6 +33,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     [super viewDidLoad];
     
     [self restorePost];
+    [self updateCharacterCountLabel];
 }
 
 - (void)dealloc
@@ -39,11 +41,31 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     [self savePost];
 }
 
+- (void)showEditTokenViewController
+{
+    LUBEditTokenViewController *editTokenViewController = [[LUBEditTokenViewController alloc] initWithNibName:NSStringFromClass(LUBEditTokenViewController.class)
+                                                                                                       bundle:nil];
+    
+    [self presentViewControllerInWidget:editTokenViewController];
+}
+
+- (void)updateCharacterCountLabel
+{
+    self.characterCounterLabel.stringValue = [NSString stringWithFormat:@"%@/280", @(self.textView.string.length)];
+}
+
 #pragma mark - NCWidgetProviding
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult result))completionHandler
 {
     completionHandler(NCUpdateResultNoData);
+}
+
+#pragma mark - NSTextViewDelegate
+
+- (void)textDidChange:(NSNotification *)notification
+{
+    [self updateCharacterCountLabel];
 }
 
 #pragma mark - IBActions
@@ -81,14 +103,6 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
                                     // TODO: Display error message
                                 }
                             }];
-}
-
-- (void)showEditTokenViewController
-{
-    LUBEditTokenViewController *editTokenViewController = [[LUBEditTokenViewController alloc] initWithNibName:NSStringFromClass(LUBEditTokenViewController.class)
-                                                                                                       bundle:nil];
-    
-    [self presentViewControllerInWidget:editTokenViewController];
 }
 
 #pragma mark - Post Saving/Restoring
