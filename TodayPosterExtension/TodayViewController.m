@@ -11,10 +11,10 @@
 #import "TodayViewController.h"
 
 #import "LUBAPI.h"
-#import "LUBEditTokenViewController.h"
+#import "LUBConstant.h"
 #import "LUBCredentials.h"
+#import "LUBEditTokenViewController.h"
 
-#define ReverseDNS @"com.bryanluby.TodayPoster"
 static NSString *const PostDraftDefaultsKey = ReverseDNS @"PostDraftDefaultsKey";
 static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursorLocationKey";
 
@@ -106,6 +106,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 - (void)textDidChange:(NSNotification *)notification
 {
     [self updateCharacterCountLabel];
+    
     if ([self.stackView.arrangedSubviews containsObject:self.messageLabel]) {
         [self.stackView removeView:self.messageLabel];
     }
@@ -131,23 +132,27 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
         // Enable/disable button instead
         return;
     }
+    
+    NSString *customPostingURL = nil;
+    if ([NSUserDefaults.standardUserDefaults boolForKey:LUBDefaultKey.shouldUseCustomPostingURL]) {
+        customPostingURL = [NSUserDefaults.standardUserDefaults objectForKey:LUBDefaultKey.customPostingURL];
+    }
 
     [self.progressSpinner startAnimation:nil];
     typeof(self) __weak weakSelf = self;
-    [LUBAPI postToMicroDotBlogWithText:self.textView.string
-                              appToken:appToken
-                            completion:^(BOOL success, NSString *postURL) {
-                                [weakSelf.progressSpinner stopAnimation:nil];
-                                
-                                if (success) {
-                                    weakSelf.textView.string = @"";
-                                    if (postURL) {
-                                        [weakSelf showSuccessfulPostMessageWithURL:postURL];
-                                    }
-                                } else {
-                                    [weakSelf showPostErrorMessage];
-                                }
-                            }];
+    [LUBAPI postToMicroBlogWithText:self.textView.string
+                   customPostingURL:customPostingURL
+                           appToken:appToken
+                         completion:^(BOOL success, NSString * _Nullable postURL) {
+                             [weakSelf.progressSpinner stopAnimation:nil];
+                             
+                             if (success) {
+                                 weakSelf.textView.string = @"";
+                                 [weakSelf showSuccessfulPostMessageWithURL:postURL];
+                             } else {
+                                 [weakSelf showPostErrorMessage];
+                             }
+                         }];
 }
 
 #pragma mark - Post Saving/Restoring

@@ -10,9 +10,17 @@
 
 @implementation LUBAPI
 
-+ (void)postToMicroDotBlogWithText:(NSString *)postText appToken:(NSString *)appToken completion:(void (^)(BOOL success, NSString * _Nullable postURL))completion
++ (void)postToMicroBlogWithText:(NSString *)postText
+               customPostingURL:(nullable NSString *)customPostingURLOrNil
+                       appToken:(NSString *)appToken
+                     completion:(void (^)(BOOL, NSString * _Nullable))completion
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://micro.blog/micropub"]];
+    NSString *postingURLString = @"https://micro.blog/micropub";
+    if (customPostingURLOrNil) {
+        postingURLString = customPostingURLOrNil;
+    }
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:postingURLString]];
     request.HTTPMethod = @"POST";
     
     [request addValue:[NSString stringWithFormat:@"Bearer %@", appToken]
@@ -29,7 +37,7 @@
                                    completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                        DLog(@"%@", response);
                                        if (error) {
-                                           DLog(@"%@", error);
+                                           NSLog(@"%@", error);
                                        }
                                        
                                        NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)response;

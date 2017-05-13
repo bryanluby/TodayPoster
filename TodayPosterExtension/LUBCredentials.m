@@ -8,11 +8,13 @@
 
 #import "LUBCredentials.h"
 
+#import "LUBConstant.h"
+
 @implementation LUBCredentials
 
 + (NSURLProtectionSpace *)protectionSpace
 {
-    return [[NSURLProtectionSpace alloc] initWithHost:@"com.bryanluby.TodayPoster"
+    return [[NSURLProtectionSpace alloc] initWithHost:ReverseDNS
                                                  port:0
                                              protocol:nil
                                                 realm:nil

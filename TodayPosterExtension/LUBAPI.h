@@ -12,17 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LUBAPI : NSObject
 
-
 /**
- Post to Micro.blog using the posting API.
+ Post to Micro.blog (or custom posting URL) using the posting API.
 
  @param postText the text to post.
+ @param customPostingURLOrNil the custom posting URL to use. If nil, it will use the default Micro.blog posting endpoint.
  @param appToken the app specific token to post with.
- @param completion a completion handler to be called on the main queue when the call completes. The postURL is to the "Location" URL of the post.
+ @param completion a completion handler to be called on the main queue when the call completes. The postURL is the "Location" URL of the post.
  */
-+ (void)postToMicroDotBlogWithText:(NSString *)postText
-                          appToken:(NSString *)appToken
-                        completion:(void (^)(BOOL success, NSString * _Nullable postURL))completion;
++ (void)postToMicroBlogWithText:(NSString *)postText
+               customPostingURL:(nullable NSString *)customPostingURLOrNil
+                       appToken:(NSString *)appToken
+                     completion:(void (^)(BOOL success, NSString * _Nullable postURL))completion;
 
 @end
 

@@ -9,6 +9,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LUBEditTokenViewController">
             <connections>
+                <outlet property="customPostingURLCheckbox" destination="uFv-aA-xQw" id="kum-aO-Uvd"/>
+                <outlet property="customPostingURLTextField" destination="rSX-TM-ff0" id="tQg-cK-yos"/>
                 <outlet property="secureTextField" destination="HQR-qH-1sR" id="Bae-es-gFz"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -16,13 +18,13 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="349" height="183"/>
             <subviews>
                 <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5B-WC-8AW">
-                    <rect key="frame" x="10" y="10" width="329" height="80"/>
+                    <rect key="frame" x="10" y="10" width="329" height="163"/>
                     <subviews>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JK-e3-ar3">
-                            <rect key="frame" x="116.5" y="63" width="96" height="17"/>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JK-e3-ar3" userLabel="Edit App Token Label">
+                            <rect key="frame" x="116.5" y="146" width="96" height="17"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edit App Token" id="IDv-I3-Cu9">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -30,7 +32,7 @@
                             </textFieldCell>
                         </textField>
                         <secureTextField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQR-qH-1sR">
-                            <rect key="frame" x="64.5" y="31" width="200" height="22"/>
+                            <rect key="frame" x="64.5" y="114" width="200" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="Acw-KO-hqY"/>
                             </constraints>
@@ -43,8 +45,8 @@
                                 </allowedInputSourceLocales>
                             </secureTextFieldCell>
                         </secureTextField>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J20-GX-vre">
-                            <rect key="frame" x="129.5" y="-7" width="70" height="32"/>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J20-GX-vre" userLabel="Save Token Button">
+                            <rect key="frame" x="129.5" y="76" width="70" height="32"/>
                             <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tms-qQ-v2i">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -53,13 +55,38 @@
                                 <action selector="saveButtonPressed:" target="-2" id="kZ6-d7-7d9"/>
                             </connections>
                         </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="uFv-aA-xQw">
+                            <rect key="frame" x="77.5" y="30" width="174" height="45"/>
+                            <buttonCell key="cell" type="check" title="Use Custom Posting URL" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Mg8-fF-KTr">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="customPostingURLCheckboxPressed:" target="-2" id="qAv-0B-F1K"/>
+                            </connections>
+                        </button>
+                        <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSX-TM-ff0" userLabel="Custom Posting URL Text Field">
+                            <rect key="frame" x="64.5" y="0.0" width="200" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="http://" drawsBackground="YES" id="4xx-In-56u">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="rSX-TM-ff0" firstAttribute="width" secondItem="HQR-qH-1sR" secondAttribute="width" id="3Qb-ug-ohE"/>
+                    </constraints>
                     <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
                         <integer value="1000"/>
                         <integer value="1000"/>
                         <integer value="1000"/>
                     </visibilityPriorities>
                     <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
