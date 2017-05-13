@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="characterCounterLabel" destination="CE5-xZ-Bzf" id="qDD-7W-cJF"/>
                 <outlet property="progressSpinner" destination="YtY-dR-ea0" id="xWl-7S-4Ea"/>
+                <outlet property="stackView" destination="axX-J0-4wk" id="CSx-qx-nLa"/>
                 <outlet property="textView" destination="lgZ-p2-m8B" id="3Jy-T6-tYx"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>

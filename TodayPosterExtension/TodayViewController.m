@@ -23,6 +23,9 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 @property (nonatomic, strong) IBOutlet NSTextView *textView;
 @property (nonatomic, strong) IBOutlet NSProgressIndicator *progressSpinner;
 @property (nonatomic, strong) IBOutlet NSTextField *characterCounterLabel;
+@property (nonatomic, strong) IBOutlet NSStackView *stackView;
+
+@property (nonatomic, strong) NSTextField *messageLabel;
 
 @end
 
@@ -34,6 +37,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     
     [self restorePost];
     [self updateCharacterCountLabel];
+    [self configureMessageLabel];
 }
 
 - (void)dealloc
@@ -54,6 +58,22 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     self.characterCounterLabel.stringValue = [NSString stringWithFormat:@"%@/280", @(self.textView.string.length)];
 }
 
+- (void)configureMessageLabel
+{
+    self.messageLabel = [[NSTextField alloc] initWithFrame:NSZeroRect];
+    self.messageLabel.editable = NO;
+    self.messageLabel.selectable = YES;
+    self.messageLabel.allowsEditingTextAttributes = YES;
+    self.messageLabel.drawsBackground = NO;
+    self.messageLabel.bezeled = NO;
+}
+- (void)showPostErrorMessage
+{
+    [self.stackView addArrangedSubview:self.messageLabel];
+    self.messageLabel.stringValue = NSLocalizedString(@"Something went wrong when trying to post. Please try again.",
+                                                      @"Error message when posting fails");
+}
+
 #pragma mark - NCWidgetProviding
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult result))completionHandler
@@ -66,6 +86,9 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 - (void)textDidChange:(NSNotification *)notification
 {
     [self updateCharacterCountLabel];
+    if ([self.stackView.arrangedSubviews containsObject:self.messageLabel]) {
+        [self.stackView removeView:self.messageLabel];
+    }
 }
 
 #pragma mark - IBActions
@@ -100,7 +123,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
                                     weakSelf.textView.string = @"";
                                     // TODO: display label with location of post url
                                 } else {
-                                    // TODO: Display error message
+                                    [self showPostErrorMessage];
                                 }
                             }];
 }
