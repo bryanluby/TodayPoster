@@ -10,6 +10,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController">
             <connections>
                 <outlet property="characterCounterLabel" destination="CE5-xZ-Bzf" id="qDD-7W-cJF"/>
+                <outlet property="postButton" destination="zyF-Zt-PqY" id="xni-wO-kmm"/>
                 <outlet property="progressSpinner" destination="YtY-dR-ea0" id="xWl-7S-4Ea"/>
                 <outlet property="stackView" destination="axX-J0-4wk" id="CSx-qx-nLa"/>
                 <outlet property="textView" destination="lgZ-p2-m8B" id="3Jy-T6-tYx"/>
@@ -60,7 +61,7 @@
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CE5-xZ-Bzf">
                             <rect key="frame" x="142" y="45" width="36" height="14"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0/280" id="Mjf-J4-tEN">
-                                <font key="font" metaFont="system" size="11"/>
+                                <font key="font" metaFont="smallSystem"/>
                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
@@ -69,7 +70,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                             <subviews>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zyF-Zt-PqY" userLabel="Post To Micro.blog Button">
-                                    <rect key="frame" x="84" y="4.5" width="153" height="32"/>
+                                    <rect key="frame" x="84" y="5" width="153" height="32"/>
                                     <buttonCell key="cell" type="push" title="Post To Micro.blog" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Pop" inset="2" id="mTI-yk-YXe">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -83,10 +84,10 @@ DQ
                                     </connections>
                                 </button>
                                 <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="YtY-dR-ea0">
-                                    <rect key="frame" x="288" y="14.5" width="16" height="16"/>
+                                    <rect key="frame" x="288" y="15" width="16" height="16"/>
                                 </progressIndicator>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-Ln-iug" userLabel="Settings Button">
-                                    <rect key="frame" x="11" y="7.5" width="36" height="28"/>
+                                    <rect key="frame" x="11" y="8" width="36" height="28"/>
                                     <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSActionTemplate" imagePosition="only" alignment="center" controlSize="small" borderStyle="border" inset="2" id="yR3-iA-fzS">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="smallSystem"/>

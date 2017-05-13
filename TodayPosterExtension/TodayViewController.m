@@ -24,6 +24,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 @property (nonatomic, strong) IBOutlet NSProgressIndicator *progressSpinner;
 @property (nonatomic, strong) IBOutlet NSTextField *characterCounterLabel;
 @property (nonatomic, strong) IBOutlet NSStackView *stackView;
+@property (nonatomic, strong) IBOutlet NSButton *postButton;
 
 @property (nonatomic, strong) NSTextField *messageLabel;
 
@@ -38,6 +39,17 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     [self restorePost];
     [self updateCharacterCountLabel];
     [self configureMessageLabel];
+}
+
+- (void)viewWillAppear
+{
+    [super viewWillAppear];
+    
+    if ([NSUserDefaults.standardUserDefaults boolForKey:LUBDefaultKey.shouldUseCustomPostingURL]) {
+        self.postButton.title = NSLocalizedString(@"Post", @"Generic title of the post button");
+    } else {
+        self.postButton.title = NSLocalizedString(@"Post to Micro.blog", @"Title of the post to Micro.blog button");
+    }
 }
 
 - (void)dealloc
