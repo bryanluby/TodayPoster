@@ -120,6 +120,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     [self updateCharacterCountLabel];
     
     if ([self.stackView.arrangedSubviews containsObject:self.messageLabel]) {
+        self.messageLabel.stringValue = @"";
         [self.stackView removeView:self.messageLabel];
     }
 }
