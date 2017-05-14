@@ -8,7 +8,29 @@
 
 #import "ViewController.h"
 
+@interface ViewController ()
+
+@property (nonatomic, strong, readwrite) IBOutlet NSTextField *versionNumberLabel;
+
+@end
+
 @implementation ViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self configureVersionNumberLabel];
+}
+
+- (void)configureVersionNumberLabel
+{
+    NSString *versionNumber = [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *buildNumber = [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
+    NSString *fullVersionString = [NSString stringWithFormat:@"Version: %@ (%@)", versionNumber, buildNumber];
+    
+    self.versionNumberLabel.stringValue = fullVersionString;
+}
 
 - (void)openProjectOnGithub
 {
