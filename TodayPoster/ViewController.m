@@ -10,12 +10,24 @@
 
 @implementation ViewController
 
+- (void)openProjectOnGithub
+{
+    // TODO: Refactor url to a constant that lives in a shared framework between app/extension.
+    [NSWorkspace.sharedWorkspace openURL:[NSURL URLWithString:@"https://github.com/bryanluby/TodayPoster"]];
+}
+
 #pragma mark - Responder Chain
 
 - (void)showHelp:(id)sender
 {
-    // TODO: Refactor url to a constant that lives in a shared framework between app/extension.
-    [NSWorkspace.sharedWorkspace openURL:[NSURL URLWithString:@"https://github.com/bryanluby/TodayPoster"]];
+    [self openProjectOnGithub];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)githubButtonPressed:(id)sender
+{
+    [self openProjectOnGithub];
 }
 
 @end

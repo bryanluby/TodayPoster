@@ -119,6 +119,26 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="wq7-kG-i85" userLabel="Github Button">
+                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Ghe-RX-srg"/>
+                                    <constraint firstAttribute="height" constant="40" id="U1c-2w-zrY"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub-Mark" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="g4R-DO-gdC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="githubButtonPressed:" target="XfG-lQ-9wD" id="0xf-Kn-bcz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wq7-kG-i85" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="mmh-W4-aEy"/>
+                            <constraint firstAttribute="bottom" secondItem="wq7-kG-i85" secondAttribute="bottom" constant="20" id="xxD-ck-02E"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -126,4 +146,7 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GitHub-Mark" width="120" height="120"/>
+    </resources>
 </document>
