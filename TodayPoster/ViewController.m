@@ -6,11 +6,9 @@
 //  Copyright © 2017 Bryan Luby. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ViewController_Private.h"
 
 @interface ViewController ()
-
-@property (nonatomic, strong, readwrite) IBOutlet NSTextField *versionNumberLabel;
 
 @end
 

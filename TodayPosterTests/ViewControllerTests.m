@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
-#import "ViewController.h"
+#import "ViewController_Private.h"
 
 @interface ViewControllerTests : XCTestCase
 

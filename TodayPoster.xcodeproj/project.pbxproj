@@ -63,6 +63,7 @@
 		9062B5CA1EC8A97600D3A3AB /* AppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTests.m; sourceTree = "<group>"; };
 		9062B5CE1EC8AC6000D3A3AB /* WindowControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowControllerTests.m; sourceTree = "<group>"; };
 		9062B5D01EC8B80F00D3A3AB /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
+		9062B5D21EC8C8E900D3A3AB /* ViewController_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController_Private.h; sourceTree = "<group>"; };
 		906D0DB31EBE518C004C730F /* TodayPoster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayPoster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		906D0DB61EBE518C004C730F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		906D0DB71EBE518C004C730F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 				906D0DB61EBE518C004C730F /* AppDelegate.h */,
 				906D0DB71EBE518C004C730F /* AppDelegate.m */,
 				906D0DBC1EBE518C004C730F /* ViewController.h */,
+				9062B5D21EC8C8E900D3A3AB /* ViewController_Private.h */,
 				906D0DBD1EBE518C004C730F /* ViewController.m */,
 				906D0DBF1EBE518C004C730F /* Assets.xcassets */,
 				906D0DC11EBE518C004C730F /* Main.storyboard */,
