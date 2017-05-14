@@ -13,7 +13,7 @@
 #import "LUBAPI.h"
 #import "LUBConstant.h"
 #import "LUBCredentials.h"
-#import "LUBEditTokenViewController.h"
+#import "LUBSettingsViewController.h"
 
 static NSString *const PostDraftDefaultsKey = ReverseDNS @"PostDraftDefaultsKey";
 static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursorLocationKey";
@@ -57,12 +57,12 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     [self savePost];
 }
 
-- (void)showEditTokenViewController
+- (void)showSettingsViewController
 {
-    LUBEditTokenViewController *editTokenViewController = [[LUBEditTokenViewController alloc] initWithNibName:NSStringFromClass(LUBEditTokenViewController.class)
-                                                                                                       bundle:nil];
+    LUBSettingsViewController *settingsViewController = [[LUBSettingsViewController alloc] initWithNibName:NSStringFromClass(LUBSettingsViewController.class)
+                                                                                                    bundle:nil];
     
-    [self presentViewControllerInWidget:editTokenViewController];
+    [self presentViewControllerInWidget:settingsViewController];
 }
 
 - (void)updateCharacterCountLabel
@@ -128,15 +128,15 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 
 - (IBAction)settingsButtonPressed:(NSButton *)sender
 {
-    [self showEditTokenViewController];
+    [self showSettingsViewController];
 }
 
 - (IBAction)postButtonPressed:(NSButton *)sender
 {
     NSString *const appToken = LUBCredentials.appToken;
-
+    
     if (!appToken) {
-        [self showEditTokenViewController];
+        [self showSettingsViewController];
         return;
     }
     
@@ -149,7 +149,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     if ([NSUserDefaults.standardUserDefaults boolForKey:LUBDefaultKey.shouldUseCustomPostingURL]) {
         customPostingURL = [NSUserDefaults.standardUserDefaults objectForKey:LUBDefaultKey.customPostingURL];
     }
-
+    
     [self.progressSpinner startAnimation:nil];
     typeof(self) __weak weakSelf = self;
     [LUBAPI postToMicroBlogWithText:self.textView.string

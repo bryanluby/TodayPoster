@@ -1,5 +1,5 @@
 //
-//  LUBEditTokenViewController.h
+//  LUBSettingsViewController.h
 //  TodayPoster
 //
 //  Created by Bryan Luby on 5/7/17.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface LUBEditTokenViewController : NSViewController
+@interface LUBSettingsViewController : NSViewController
 
 @end

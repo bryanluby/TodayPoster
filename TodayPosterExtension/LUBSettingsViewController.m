@@ -1,5 +1,5 @@
 //
-//  LUBEditTokenViewController.m
+//  LUBSettingsViewController.m
 //  TodayPoster
 //
 //  Created by Bryan Luby on 5/7/17.
@@ -8,12 +8,12 @@
 
 @import NotificationCenter;
 
-#import "LUBEditTokenViewController.h"
+#import "LUBSettingsViewController.h"
 
 #import "LUBConstant.h"
 #import "LUBCredentials.h"
 
-@interface LUBEditTokenViewController ()
+@interface LUBSettingsViewController ()
 
 @property (nonatomic, strong) IBOutlet NSSecureTextField *secureTextField;
 @property (nonatomic, strong) IBOutlet NSButton *customPostingURLCheckbox;
@@ -21,12 +21,12 @@
 
 @end
 
-@implementation LUBEditTokenViewController
+@implementation LUBSettingsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     BOOL shouldUseCustomPostingURL = [NSUserDefaults.standardUserDefaults boolForKey:LUBDefaultKey.shouldUseCustomPostingURL];
     self.customPostingURLCheckbox.state = (shouldUseCustomPostingURL) ? NSOnState : NSOffState;
     
@@ -34,7 +34,7 @@
     if (customPostingURL) {
         self.customPostingURLTextField.stringValue = customPostingURL;
     }
-
+    
     if (LUBCredentials.appToken) {
         self.secureTextField.stringValue = LUBCredentials.appToken;
     }
@@ -55,9 +55,9 @@
         // Enable/disable button instead
         return;
     }
-
+    
     LUBCredentials.appToken = self.secureTextField.stringValue;
-
+    
     [self.presentingViewController dismissViewController:self];
 }
 

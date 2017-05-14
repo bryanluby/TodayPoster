@@ -22,8 +22,8 @@
 		906D0DEC1EBE5367004C730F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 906D0DEA1EBE5367004C730F /* InfoPlist.strings */; };
 		906D0DEF1EBE5367004C730F /* TodayPosterExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 906D0DDC1EBE5367004C730F /* TodayPosterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		909C15331EBE60F4001B426E /* LUBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 909C15321EBE60F4001B426E /* LUBAPI.m */; };
-		909C15461EBFA108001B426E /* LUBEditTokenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 909C15441EBFA108001B426E /* LUBEditTokenViewController.m */; };
-		909C15471EBFA108001B426E /* LUBEditTokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909C15451EBFA108001B426E /* LUBEditTokenViewController.xib */; };
+		909C15461EBFA108001B426E /* LUBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 909C15441EBFA108001B426E /* LUBSettingsViewController.m */; };
+		909C15471EBFA108001B426E /* LUBSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909C15451EBFA108001B426E /* LUBSettingsViewController.xib */; };
 		90B5101C1EC0A42B00D43C95 /* LUBCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B5101B1EC0A42B00D43C95 /* LUBCredentials.m */; };
 		90B7FBD31EC69ED4001D229E /* LUBConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B7FBD21EC69ED4001D229E /* LUBConstant.m */; };
 /* End PBXBuildFile section */
@@ -86,9 +86,9 @@
 		909C15311EBE60F4001B426E /* LUBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBAPI.h; sourceTree = "<group>"; };
 		909C15321EBE60F4001B426E /* LUBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBAPI.m; sourceTree = "<group>"; };
 		909C15361EBE6A07001B426E /* TodayPoster-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodayPoster-PrefixHeader.pch"; sourceTree = "<group>"; };
-		909C15431EBFA108001B426E /* LUBEditTokenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBEditTokenViewController.h; sourceTree = "<group>"; };
-		909C15441EBFA108001B426E /* LUBEditTokenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBEditTokenViewController.m; sourceTree = "<group>"; };
-		909C15451EBFA108001B426E /* LUBEditTokenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUBEditTokenViewController.xib; sourceTree = "<group>"; };
+		909C15431EBFA108001B426E /* LUBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBSettingsViewController.h; sourceTree = "<group>"; };
+		909C15441EBFA108001B426E /* LUBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBSettingsViewController.m; sourceTree = "<group>"; };
+		909C15451EBFA108001B426E /* LUBSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUBSettingsViewController.xib; sourceTree = "<group>"; };
 		90B5101A1EC0A42B00D43C95 /* LUBCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBCredentials.h; sourceTree = "<group>"; };
 		90B5101B1EC0A42B00D43C95 /* LUBCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBCredentials.m; sourceTree = "<group>"; };
 		90B7FBD11EC69ED4001D229E /* LUBConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBConstant.h; sourceTree = "<group>"; };
@@ -198,9 +198,9 @@
 				906D0DE31EBE5367004C730F /* TodayViewController.h */,
 				906D0DE41EBE5367004C730F /* TodayViewController.m */,
 				906D0DE61EBE5367004C730F /* TodayViewController.xib */,
-				909C15431EBFA108001B426E /* LUBEditTokenViewController.h */,
-				909C15441EBFA108001B426E /* LUBEditTokenViewController.m */,
-				909C15451EBFA108001B426E /* LUBEditTokenViewController.xib */,
+				909C15431EBFA108001B426E /* LUBSettingsViewController.h */,
+				909C15441EBFA108001B426E /* LUBSettingsViewController.m */,
+				909C15451EBFA108001B426E /* LUBSettingsViewController.xib */,
 				906D0DE91EBE5367004C730F /* Info.plist */,
 				906D0DEA1EBE5367004C730F /* InfoPlist.strings */,
 				906D0DE11EBE5367004C730F /* Supporting Files */,
@@ -345,7 +345,7 @@
 			files = (
 				906D0DE81EBE5367004C730F /* TodayViewController.xib in Resources */,
 				906D0DEC1EBE5367004C730F /* InfoPlist.strings in Resources */,
-				909C15471EBFA108001B426E /* LUBEditTokenViewController.xib in Resources */,
+				909C15471EBFA108001B426E /* LUBSettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90B5101C1EC0A42B00D43C95 /* LUBCredentials.m in Sources */,
-				909C15461EBFA108001B426E /* LUBEditTokenViewController.m in Sources */,
+				909C15461EBFA108001B426E /* LUBSettingsViewController.m in Sources */,
 				909C15331EBE60F4001B426E /* LUBAPI.m in Sources */,
 				906D0DE51EBE5367004C730F /* TodayViewController.m in Sources */,
 				90B7FBD31EC69ED4001D229E /* LUBConstant.m in Sources */,

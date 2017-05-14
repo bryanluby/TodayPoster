@@ -7,7 +7,7 @@
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="LUBEditTokenViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="LUBSettingsViewController">
             <connections>
                 <outlet property="customPostingURLCheckbox" destination="uFv-aA-xQw" id="kum-aO-Uvd"/>
                 <outlet property="customPostingURLTextField" destination="rSX-TM-ff0" id="tQg-cK-yos"/>
