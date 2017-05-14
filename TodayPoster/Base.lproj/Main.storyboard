@@ -95,14 +95,14 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="TodayPoster" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="TodayPosterAutosaveName" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
+                    <window key="window" title="TodayPoster" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="370" height="180"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="480" height="270"/>
-                        <value key="maxSize" type="size" width="480" height="270"/>
+                        <value key="minSize" type="size" width="370" height="180"/>
+                        <value key="maxSize" type="size" width="370" height="180"/>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -117,14 +117,14 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="370" height="180"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="wq7-kG-i85" userLabel="Github Button">
-                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                <rect key="frame" x="37" y="20" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="Ghe-RX-srg"/>
-                                    <constraint firstAttribute="height" constant="40" id="U1c-2w-zrY"/>
+                                    <constraint firstAttribute="height" constant="35" id="hX3-kk-Uj2"/>
+                                    <constraint firstAttribute="width" constant="35" id="xHQ-qg-dnc"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub-Mark" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="g4R-DO-gdC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -135,8 +135,28 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6M-vv-8uX">
-                                <rect key="frame" x="202" y="20" width="76" height="17"/>
+                                <rect key="frame" x="147" y="29" width="76" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version Info" id="aI0-pa-zBu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fx1-iC-10X">
+                                <rect key="frame" x="35" y="120" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TiW-Sz-1af"/>
+                                    <constraint firstAttribute="width" constant="296" id="enL-1u-pJ8"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="The TodayPoster widget can be enabled in the Notification Center sidebar." id="HyS-vZ-hex">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cN3-C6-rDD">
+                                <rect key="frame" x="35" y="72" width="300" height="40"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Open Notification Center. Click Today. Then click New (or Edit) to add the Widget." id="r6T-F9-SyR">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -144,10 +164,16 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="t6M-vv-8uX" secondAttribute="bottom" constant="20" id="5kO-ov-eAF"/>
-                            <constraint firstItem="t6M-vv-8uX" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="iwg-oj-ygY"/>
-                            <constraint firstItem="wq7-kG-i85" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="mmh-W4-aEy"/>
-                            <constraint firstAttribute="bottom" secondItem="wq7-kG-i85" secondAttribute="bottom" constant="20" id="xxD-ck-02E"/>
+                            <constraint firstAttribute="bottom" secondItem="wq7-kG-i85" secondAttribute="bottom" constant="20" id="78O-3Q-bsm"/>
+                            <constraint firstItem="t6M-vv-8uX" firstAttribute="centerY" secondItem="wq7-kG-i85" secondAttribute="centerY" id="Rex-Tf-Y9M"/>
+                            <constraint firstItem="Fx1-iC-10X" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Snf-Zg-j9w"/>
+                            <constraint firstItem="wq7-kG-i85" firstAttribute="leading" secondItem="Fx1-iC-10X" secondAttribute="leading" id="Uey-dp-60R"/>
+                            <constraint firstItem="t6M-vv-8uX" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ZPB-8o-3cP"/>
+                            <constraint firstItem="cN3-C6-rDD" firstAttribute="centerX" secondItem="Fx1-iC-10X" secondAttribute="centerX" id="b2O-wZ-Qhw"/>
+                            <constraint firstItem="cN3-C6-rDD" firstAttribute="width" secondItem="Fx1-iC-10X" secondAttribute="width" id="b8k-fX-ydy"/>
+                            <constraint firstItem="cN3-C6-rDD" firstAttribute="top" secondItem="Fx1-iC-10X" secondAttribute="bottom" constant="8" id="lu5-Ck-Sh1"/>
+                            <constraint firstItem="Fx1-iC-10X" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="qNU-of-geo"/>
+                            <constraint firstItem="cN3-C6-rDD" firstAttribute="height" secondItem="Fx1-iC-10X" secondAttribute="height" id="tfB-Vd-1Ok"/>
                         </constraints>
                     </view>
                     <connections>
@@ -155,8 +181,13 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <textFieldCell sendsActionOnEndEditing="YES" title="Open Notification Center. Click Today. Then click New (or Edit)." id="0GP-Gf-avG">
+                    <font key="font" metaFont="system"/>
+                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                </textFieldCell>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="76" y="649"/>
         </scene>
     </scenes>
     <resources>
