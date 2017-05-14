@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9062B5CB1EC8A97600D3A3AB /* AppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9062B5CA1EC8A97600D3A3AB /* AppDelegateTests.m */; };
+		9062B5CF1EC8AC6000D3A3AB /* WindowControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9062B5CE1EC8AC6000D3A3AB /* WindowControllerTests.m */; };
 		906D0DB81EBE518C004C730F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 906D0DB71EBE518C004C730F /* AppDelegate.m */; };
 		906D0DBB1EBE518C004C730F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 906D0DBA1EBE518C004C730F /* main.m */; };
 		906D0DBE1EBE518C004C730F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 906D0DBD1EBE518C004C730F /* ViewController.m */; };
@@ -57,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9062B5CA1EC8A97600D3A3AB /* AppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTests.m; sourceTree = "<group>"; };
+		9062B5CE1EC8AC6000D3A3AB /* WindowControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowControllerTests.m; sourceTree = "<group>"; };
 		906D0DB31EBE518C004C730F /* TodayPoster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayPoster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		906D0DB61EBE518C004C730F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		906D0DB71EBE518C004C730F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				906D0DCD1EBE518C004C730F /* TodayPosterTests.m */,
+				9062B5CA1EC8A97600D3A3AB /* AppDelegateTests.m */,
+				9062B5CE1EC8AC6000D3A3AB /* WindowControllerTests.m */,
 				906D0DCF1EBE518C004C730F /* Info.plist */,
 			);
 			path = TodayPosterTests;
@@ -388,6 +394,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9062B5CF1EC8AC6000D3A3AB /* WindowControllerTests.m in Sources */,
+				9062B5CB1EC8A97600D3A3AB /* AppDelegateTests.m in Sources */,
 				906D0DCE1EBE518C004C730F /* TodayPosterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
