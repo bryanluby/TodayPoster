@@ -6,7 +6,7 @@ Simple macOS Today Widget for posting to [Micro.blog](https://micro.blog/).
 
 ## Prerequisites
 
-- macOS 10.12 Sierra
+- macOS 10.11 El Capitan+
 - Micro.blog account
 - Micro.blog app token
 

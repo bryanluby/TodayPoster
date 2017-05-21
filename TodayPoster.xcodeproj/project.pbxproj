@@ -559,6 +559,7 @@
 				GCC_PREFIX_HEADER = "TodayPoster/TodayPoster-PrefixHeader.pch";
 				INFOPLIST_FILE = TodayPoster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -573,6 +574,7 @@
 				GCC_PREFIX_HEADER = "TodayPoster/TodayPoster-PrefixHeader.pch";
 				INFOPLIST_FILE = TodayPoster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -615,6 +617,7 @@
 				GCC_PREFIX_HEADER = "TodayPoster/TodayPoster-PrefixHeader.pch";
 				INFOPLIST_FILE = TodayPosterExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster.TodayPosterExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -630,6 +633,7 @@
 				GCC_PREFIX_HEADER = "TodayPoster/TodayPoster-PrefixHeader.pch";
 				INFOPLIST_FILE = TodayPosterExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster.TodayPosterExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
