@@ -10,6 +10,8 @@
 
 @implementation LUBConstant
 
++ (NSString *)githubProjectURLString { return @"https://github.com/bryanluby/TodayPoster"; }
+
 @end
 
 @implementation LUBDefaultKey

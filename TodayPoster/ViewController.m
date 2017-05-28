@@ -8,6 +8,8 @@
 
 #import "ViewController_Private.h"
 
+@import TodayPosterKit.LUBConstant;
+
 @interface ViewController ()
 
 @end
@@ -32,8 +34,7 @@
 
 - (void)openProjectOnGithub
 {
-    // TODO: Refactor url to a constant that lives in a shared framework between app/extension.
-    [NSWorkspace.sharedWorkspace openURL:[NSURL URLWithString:@"https://github.com/bryanluby/TodayPoster"]];
+    [NSWorkspace.sharedWorkspace openURL:[NSURL URLWithString:LUBConstant.githubProjectURLString]];
 }
 
 #pragma mark - Responder Chain

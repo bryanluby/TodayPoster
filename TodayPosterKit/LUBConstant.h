@@ -12,11 +12,13 @@
 
 @interface LUBConstant : NSObject
 
+@property (nonatomic, class, copy, readonly) NSString *githubProjectURLString;
+
 @end
 
 @interface LUBDefaultKey : NSObject
 
-@property (nonatomic, class, readonly) NSString *shouldUseCustomPostingURL;
-@property (nonatomic, class, readonly) NSString *customPostingURL;
+@property (nonatomic, class, copy, readonly) NSString *shouldUseCustomPostingURL;
+@property (nonatomic, class, copy, readonly) NSString *customPostingURL;
 
 @end
