@@ -7,11 +7,12 @@
 //
 
 @import NotificationCenter.NCWidgetProviding;
+@import TodayPosterKit.LUBConstant;
 
 #import "TodayViewController.h"
 
 #import "LUBAPI.h"
-#import "LUBConstant.h"
+
 #import "LUBCredentials.h"
 #import "LUBSettingsViewController.h"
 

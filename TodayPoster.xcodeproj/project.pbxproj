@@ -25,12 +25,14 @@
 		909C15461EBFA108001B426E /* LUBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 909C15441EBFA108001B426E /* LUBSettingsViewController.m */; };
 		909C15471EBFA108001B426E /* LUBSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909C15451EBFA108001B426E /* LUBSettingsViewController.xib */; };
 		90B5101C1EC0A42B00D43C95 /* LUBCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B5101B1EC0A42B00D43C95 /* LUBCredentials.m */; };
-		90B7FBD31EC69ED4001D229E /* LUBConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B7FBD21EC69ED4001D229E /* LUBConstant.m */; };
 		90EF02321EDB20F20050BE47 /* TodayPosterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EF02291EDB20F20050BE47 /* TodayPosterKit.framework */; };
 		90EF02391EDB20F20050BE47 /* TodayPosterKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EF02381EDB20F20050BE47 /* TodayPosterKitTests.m */; };
 		90EF023B1EDB20F20050BE47 /* TodayPosterKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EF022B1EDB20F20050BE47 /* TodayPosterKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		90EF023E1EDB20F20050BE47 /* TodayPosterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EF02291EDB20F20050BE47 /* TodayPosterKit.framework */; };
 		90EF023F1EDB20F20050BE47 /* TodayPosterKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 90EF02291EDB20F20050BE47 /* TodayPosterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		90EF02551EDB23980050BE47 /* LUBConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EF02531EDB23980050BE47 /* LUBConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90EF02561EDB23980050BE47 /* LUBConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EF02541EDB23980050BE47 /* LUBConstant.m */; };
+		90EF02571EDB26590050BE47 /* TodayPosterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EF02291EDB20F20050BE47 /* TodayPosterKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,14 +131,14 @@
 		909C15451EBFA108001B426E /* LUBSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUBSettingsViewController.xib; sourceTree = "<group>"; };
 		90B5101A1EC0A42B00D43C95 /* LUBCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBCredentials.h; sourceTree = "<group>"; };
 		90B5101B1EC0A42B00D43C95 /* LUBCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBCredentials.m; sourceTree = "<group>"; };
-		90B7FBD11EC69ED4001D229E /* LUBConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBConstant.h; sourceTree = "<group>"; };
-		90B7FBD21EC69ED4001D229E /* LUBConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBConstant.m; sourceTree = "<group>"; };
 		90EF02291EDB20F20050BE47 /* TodayPosterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TodayPosterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EF022B1EDB20F20050BE47 /* TodayPosterKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayPosterKit.h; sourceTree = "<group>"; };
 		90EF022C1EDB20F20050BE47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90EF02311EDB20F20050BE47 /* TodayPosterKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayPosterKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EF02381EDB20F20050BE47 /* TodayPosterKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayPosterKitTests.m; sourceTree = "<group>"; };
 		90EF023A1EDB20F20050BE47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90EF02531EDB23980050BE47 /* LUBConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBConstant.h; sourceTree = "<group>"; };
+		90EF02541EDB23980050BE47 /* LUBConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBConstant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EF02571EDB26590050BE47 /* TodayPosterKit.framework in Frameworks */,
 				906D0DDF1EBE5367004C730F /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +259,6 @@
 			children = (
 				909C15311EBE60F4001B426E /* LUBAPI.h */,
 				909C15321EBE60F4001B426E /* LUBAPI.m */,
-				90B7FBD11EC69ED4001D229E /* LUBConstant.h */,
-				90B7FBD21EC69ED4001D229E /* LUBConstant.m */,
 				90B5101A1EC0A42B00D43C95 /* LUBCredentials.h */,
 				90B5101B1EC0A42B00D43C95 /* LUBCredentials.m */,
 				906D0DE31EBE5367004C730F /* TodayViewController.h */,
@@ -285,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				90EF022B1EDB20F20050BE47 /* TodayPosterKit.h */,
+				90EF02531EDB23980050BE47 /* LUBConstant.h */,
+				90EF02541EDB23980050BE47 /* LUBConstant.m */,
 				90EF022C1EDB20F20050BE47 /* Info.plist */,
 			);
 			path = TodayPosterKit;
@@ -306,6 +309,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EF02551EDB23980050BE47 /* LUBConstant.h in Headers */,
 				90EF023B1EDB20F20050BE47 /* TodayPosterKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,7 +575,6 @@
 				909C15461EBFA108001B426E /* LUBSettingsViewController.m in Sources */,
 				909C15331EBE60F4001B426E /* LUBAPI.m in Sources */,
 				906D0DE51EBE5367004C730F /* TodayViewController.m in Sources */,
-				90B7FBD31EC69ED4001D229E /* LUBConstant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EF02561EDB23980050BE47 /* LUBConstant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,6 +834,7 @@
 		90EF02401EDB20F20050BE47 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -842,6 +847,7 @@
 				INFOPLIST_FILE = TodayPosterKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPosterKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -853,6 +859,7 @@
 		90EF02411EDB20F20050BE47 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -865,6 +872,7 @@
 				INFOPLIST_FILE = TodayPosterKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPosterKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -943,6 +951,7 @@
 				90EF02411EDB20F20050BE47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90EF02461EDB20F20050BE47 /* Build configuration list for PBXNativeTarget "TodayPosterKitTests" */ = {
 			isa = XCConfigurationList;
@@ -951,6 +960,7 @@
 				90EF02431EDB20F20050BE47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
