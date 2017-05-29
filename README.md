@@ -2,7 +2,7 @@
 
 Simple macOS Today Widget for posting to [Micro.blog](https://micro.blog/).
 
-![TodayPoster](https://github.com/bryanluby/TodayPoster/blob/master/TodayPoster.png "App Screenshot")
+![TodayPoster](https://github.com/bryanluby/TodayPoster/raw/master/TodayPoster.png "App Screenshot")
 
 ## Prerequisites
 
