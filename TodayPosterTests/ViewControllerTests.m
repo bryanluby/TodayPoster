@@ -50,4 +50,11 @@
     XCTAssertEqualObjects(fullVersionString, self.mainViewController.versionNumberLabel.stringValue);
 }
 
+- (void)testGithubButton
+{
+    XCTAssertNotNil(self.mainViewController.githubButton);
+    XCTAssertEqual(NSFocusRingTypeNone, self.mainViewController.githubButton.focusRingType,
+                   @"Github button should not have a focus ring.");
+}
+
 @end

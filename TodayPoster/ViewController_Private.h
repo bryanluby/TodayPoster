@@ -11,5 +11,6 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) IBOutlet NSTextField *versionNumberLabel;
+@property (nonatomic, strong) IBOutlet NSButton *githubButton;
 
 @end
