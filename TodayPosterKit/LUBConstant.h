@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ReverseDNS @"com.bryanluby.TodayPoster"
+#define ReverseDNS @"com.bryanluby.TodayPoster."
 
 @interface LUBConstant : NSObject
 
