@@ -30,6 +30,7 @@
     NSDictionary *bodyParameters = @{
                                      @"h": @"entry",
                                      @"content": postText ?: @"",
+                                     // Title?
                                      };
     request.HTTPBody = [[self queryStringFromParameters:bodyParameters] dataUsingEncoding:NSUTF8StringEncoding];
     

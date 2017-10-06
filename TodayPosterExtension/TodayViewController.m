@@ -26,7 +26,9 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 @property (nonatomic, strong) IBOutlet NSTextField *characterCounterLabel;
 @property (nonatomic, strong) IBOutlet NSStackView *stackView;
 @property (nonatomic, strong) IBOutlet NSButton *postButton;
+@property (nonatomic, strong) IBOutlet NSTextField *titleTextField;
 
+// TODO: Refactor to add to the stack view, then show hide automatically with hidden property
 @property (nonatomic, strong) NSTextField *messageLabel;
 
 @end
@@ -40,6 +42,8 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     [self restorePost];
     [self updateCharacterCountLabel];
     [self configureMessageLabel];
+
+    // TODO: Show hide title label based on restored character count
 }
 
 - (void)viewWillAppear
@@ -170,6 +174,8 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 }
 
 #pragma mark - Post Saving/Restoring
+
+// TODO: Save/Restore title
 
 - (void)savePost
 {
