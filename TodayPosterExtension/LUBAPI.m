@@ -10,10 +10,11 @@
 
 @implementation LUBAPI
 
-+ (void)postToMicroBlogWithText:(NSString *)postText
-               customPostingURL:(nullable NSString *)customPostingURLOrNil
-                       appToken:(NSString *)appToken
-                     completion:(void (^)(BOOL, NSString * _Nullable))completion
++ (void)postToMicroBlogWithTitleText:(nullable NSString *)titleTextOrNil
+                            postText:(NSString *)postText
+                    customPostingURL:(nullable NSString *)customPostingURLOrNil
+                            appToken:(NSString *)appToken
+                          completion:(void (^)(BOOL success, NSString * _Nullable postURL))completion;
 {
     NSString *postingURLString = @"https://micro.blog/micropub";
     if (customPostingURLOrNil) {
@@ -27,12 +28,15 @@
    forHTTPHeaderField:@"Authorization"];
     [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     
-    NSDictionary *bodyParameters = @{
-                                     @"h": @"entry",
-                                     @"content": postText ?: @"",
-                                     // Title?
-                                     };
-    request.HTTPBody = [[self queryStringFromParameters:bodyParameters] dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableDictionary *bodyParams = [@{
+                                         @"h": @"entry",
+                                         @"content": postText ?: @"",
+                                         } mutableCopy];
+    if (titleTextOrNil) {
+        bodyParams[@"name"] = titleTextOrNil;
+    }
+    
+    request.HTTPBody = [[self queryStringFromParameters:[bodyParams copy]] dataUsingEncoding:NSUTF8StringEncoding];
     
     [[NSURLSession.sharedSession dataTaskWithRequest:request
                                    completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
