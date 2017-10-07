@@ -16,8 +16,10 @@
 #import "LUBCredentials.h"
 #import "LUBSettingsViewController.h"
 
+static NSString *const PostTitleDefaultsKey = ReverseDNS @"PostTitleDefaultsKey";
 static NSString *const PostDraftDefaultsKey = ReverseDNS @"PostDraftDefaultsKey";
 static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursorLocationKey";
+static NSUInteger const PostMaxLength = 280;
 
 @interface TodayViewController () <NCWidgetProviding, NSTextViewDelegate>
 
@@ -42,8 +44,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     [self restorePost];
     [self updateCharacterCountLabel];
     [self configureMessageLabel];
-
-    // TODO: Show hide title label based on restored character count
+    [self showOrHideTitleTextField];
 }
 
 - (void)viewWillAppear
@@ -72,7 +73,27 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 
 - (void)updateCharacterCountLabel
 {
-    self.characterCounterLabel.stringValue = [NSString stringWithFormat:@"%@/280", @(self.textView.string.length)];
+    self.characterCounterLabel.stringValue = [NSString stringWithFormat:@"%@/%@", @(self.textView.string.length), @(PostMaxLength)];
+}
+
+- (void)showOrHideTitleTextField
+{
+    if (self.textView.string.length <= PostMaxLength) {
+        self.titleTextField.hidden = YES;
+        self.titleTextField.stringValue = @"";
+    } else {
+        self.titleTextField.hidden = NO;
+    }
+}
+
+- (nullable NSString *)titleTextOrNil
+{
+    if (self.titleTextField.isHidden
+        || self.titleTextField.stringValue.length == 0) {
+        return nil;
+    }
+    
+    return self.titleTextField.stringValue;
 }
 
 #pragma mark - Messaging
@@ -123,6 +144,7 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 - (void)textDidChange:(NSNotification *)notification
 {
     [self updateCharacterCountLabel];
+    [self showOrHideTitleTextField];
     
     if ([self.stackView.arrangedSubviews containsObject:self.messageLabel]) {
         self.messageLabel.stringValue = @"";
@@ -158,27 +180,34 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
     
     [self.progressSpinner startAnimation:nil];
     typeof(self) __weak weakSelf = self;
-    [LUBAPI postToMicroBlogWithText:self.textView.string
-                   customPostingURL:customPostingURL
-                           appToken:appToken
-                         completion:^(BOOL success, NSString * _Nullable postURL) {
-                             [weakSelf.progressSpinner stopAnimation:nil];
-                             
-                             if (success) {
-                                 weakSelf.textView.string = @"";
-                                 [weakSelf showSuccessfulPostMessageWithURL:postURL];
-                             } else {
-                                 [weakSelf showPostErrorMessage];
-                             }
-                         }];
+    [LUBAPI postToMicroBlogWithTitleText:self.titleTextOrNil
+                                postText:self.textView.string
+                        customPostingURL:customPostingURL
+                                appToken:appToken
+                              completion:^(BOOL success, NSString * _Nullable postURL) {
+                                  [weakSelf.progressSpinner stopAnimation:nil];
+                                  
+                                  if (success) {
+                                      weakSelf.textView.string = @"";
+                                      weakSelf.titleTextField.stringValue = @"";
+                                      [weakSelf updateCharacterCountLabel];
+                                      [weakSelf showOrHideTitleTextField];
+                                      
+                                      [weakSelf showSuccessfulPostMessageWithURL:postURL];
+                                  } else {
+                                      [weakSelf showPostErrorMessage];
+                                  }
+                              }];
 }
 
 #pragma mark - Post Saving/Restoring
 
-// TODO: Save/Restore title
-
 - (void)savePost
 {
+    if (self.titleTextField.stringValue.length > 0) {
+        [NSUserDefaults.standardUserDefaults setObject:self.titleTextField.stringValue forKey:PostTitleDefaultsKey];
+    }
+    
     if (self.textView.string) {
         [NSUserDefaults.standardUserDefaults setObject:self.textView.string forKey:PostDraftDefaultsKey];
     }
@@ -191,6 +220,11 @@ static NSString *const PostDraftCursorLocationKey = ReverseDNS @"PostDraftCursor
 
 - (void)restorePost
 {
+    NSString *savedPostTitle = [NSUserDefaults.standardUserDefaults objectForKey:PostTitleDefaultsKey];
+    if (savedPostTitle) {
+        self.titleTextField.stringValue = savedPostTitle;
+    }
+    
     NSString *savedPostDraft = [NSUserDefaults.standardUserDefaults objectForKey:PostDraftDefaultsKey];
     if (savedPostDraft) {
         self.textView.string = savedPostDraft;
