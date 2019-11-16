@@ -454,6 +454,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -751,6 +752,7 @@
 				INFOPLIST_FILE = TodayPoster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -766,6 +768,7 @@
 				INFOPLIST_FILE = TodayPoster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryanluby.TodayPoster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
