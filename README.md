@@ -8,7 +8,7 @@
 
 ## Installation
 
-1. Download the latest [TodayPoster.zip](https://github.com/bryanluby/TodayPoster/releases/download/v0.6/TodayPoster.zip) file.
+1. Download the latest [TodayPoster.zip](https://github.com/bryanluby/TodayPoster/releases/download/v0.7/TodayPoster.zip) file. (Notarized)
 2. Unzip the file and drag the TodayPoster.app file to your Applications folder.
 3. Open the TodayPoster.app file. You can then quit the app.
 4. Open the Notification Center sidebar.
