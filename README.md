@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- macOS 10.11 El Capitan+
+- macOS 10.11 El Capitan+ - 10.15 Catalina. NOTE: Not compatible with macOS 11 Big Sur and higher.
 - Micro.blog account
 - Micro.blog app token
 
